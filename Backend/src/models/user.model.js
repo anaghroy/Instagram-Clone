@@ -9,6 +9,8 @@ const userSchema = new mongoose.Schema(
     },
     email: {
       type: String,
+      trim: true, //Prevent accidental spaces
+      lowercase: true,
       unique: [true, "Email already exists"],
       required: [true, "Email is required"],
     },
@@ -25,6 +27,6 @@ const userSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-const userModel = mongoose.model("all-users", userSchema);
+const userModel = mongoose.model("users", userSchema);
 
 module.exports = userModel;
