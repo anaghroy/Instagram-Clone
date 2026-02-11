@@ -23,6 +23,8 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "https://ik.imagekit.io/anaghroy/default.png",
     },
+    otp: String,
+    otpExpires: Date,
   },
   { timestamps: true },
 );
