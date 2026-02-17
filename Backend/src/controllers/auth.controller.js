@@ -177,8 +177,8 @@ async function verifyOtpController(req, res) {
     if (!user.otp || !user.otpExpires) {
       return res.status(400).json({ message: "OTP not requested" });
     }
-    
-    // Compare plain password with hashed password from DB
+
+    // Compare plain OTP with hashed OTP from DB
     const isOtpValid = await bcrypt.compare(otp, user.otp);
 
     if (!isOtpValid || user.otpExpires < Date.now()) {
