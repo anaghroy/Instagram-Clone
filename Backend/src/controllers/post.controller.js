@@ -1,6 +1,5 @@
 const postModel = require("../models/post.model");
 const ImageKit = require("@imagekit/nodejs");
-const jwt = require("jsonwebtoken");
 
 const imagekit = new ImageKit({
   privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
@@ -25,7 +24,7 @@ async function createPostController(req, res) {
   const post = await postModel.create({
     caption: req.body.caption,
     imgUrl: file.url,
-    user: decoded.id,
+    user: req.user.id,
   });
 
   res.status(201).json({

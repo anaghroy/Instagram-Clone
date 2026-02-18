@@ -5,11 +5,11 @@ async function identifyUser(req, res, next) {
 
   if (!token) {
     return res.status(401).json({
-      message: "UnAuthorized Access",
+      message: "Token not provided, Unauthorized Access",
     });
   }
 
-  let decoded;
+  let decoded = null;
 
   try {
     decoded = jwt.verify(token, process.env.JWT_SECRET);
@@ -23,4 +23,4 @@ async function identifyUser(req, res, next) {
   next();
 }
 
-module.exports = { identifyUser };
+module.exports = identifyUser;
