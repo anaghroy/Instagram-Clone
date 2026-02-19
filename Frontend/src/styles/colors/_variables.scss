@@ -1,0 +1,27 @@
+/* 
+   THEME VARIABLES
+*/
+
+/* Light Theme */
+[data-theme="dark"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f7;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --input-bg: #ffffff;
+  --border-color: #e5e5e5;
+  --button-bg: linear-gradient(90deg, #7f5af0, #5f2eea);
+  --button-text: #ffffff;
+}
+
+/* Dark Theme */
+:root {
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #1a1a2e;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0c3;
+  --input-bg: #1e1e2f;
+  --border-color: #2a2a3d;
+  --button-bg: linear-gradient(90deg, #7f5af0, #9d4edd);
+  --button-text: #ffffff;
+}

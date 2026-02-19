@@ -1,0 +1,34 @@
+/*All fonts SRC*/
+@font-face {
+  font-family: regular;
+  src: url(../../assets/fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: black;
+  src: url(../../assets/fonts/Montserrat-Black.ttf);
+}
+@font-face {
+  font-family: medium;
+  src: url(../../assets/fonts/Montserrat-Medium.ttf);
+}
+@font-face {
+  font-family: semibold;
+  src: url(../../assets/fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+  font-family: bold;
+  src: url(../../assets/fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+  font-family: extrabold;
+  src: url(../../assets/fonts/Montserrat-ExtraBold.ttf);
+}
+/* Font Variables */
+:root {
+  --font-regular: "regular", sans-serif;
+  --font-black: "black", sans-serif;
+  --font-medium: "medium", sans-serif;
+  --font-semibold: "semibold", sans-serif;
+  --font-bold: "bold", sans-serif;
+  --font-extrabold: "extrabold", sans-serif;
+}
