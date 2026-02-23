@@ -6,11 +6,12 @@
 [data-theme="dark"] {
   --bg-primary: #ffffff;
   --bg-secondary: #f5f5f7;
-  --text-primary: #111111;
+  --text-primary: #FDE9D9;
   --text-secondary: #555555;
   --input-bg: #ffffff;
   --border-color: #e5e5e5;
-  --button-bg: linear-gradient(90deg, #7f5af0, #5f2eea);
+  --form-bg: linear-gradient(0.25turn, #966e5a, 25%, #080808);
+  --button-bg: linear-gradient(90deg, #F5651F, #F1976E);
   --button-text: #ffffff;
 }
 
@@ -18,10 +19,11 @@
 :root {
   --bg-primary: #0f0f1a;
   --bg-secondary: #1a1a2e;
-  --text-primary: #ffffff;
+  --text-primary: #FDE9D9;
   --text-secondary: #b0b0c3;
-  --input-bg: #1e1e2f;
+  --input-bg: #4B362D;
   --border-color: #2a2a3d;
-  --button-bg: linear-gradient(90deg, #7f5af0, #9d4edd);
-  --button-text: #ffffff;
+  --form-bg: linear-gradient(0.25turn, #966e5a, 25%, #080808);
+  --button-bg: linear-gradient(90deg, #F5651F, #F1976E);
+  --button-text: #FDE9D9;
 }

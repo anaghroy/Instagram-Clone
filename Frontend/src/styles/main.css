@@ -6,11 +6,12 @@
 [data-theme=dark] {
   --bg-primary: #ffffff;
   --bg-secondary: #f5f5f7;
-  --text-primary: #111111;
+  --text-primary: #FDE9D9;
   --text-secondary: #555555;
   --input-bg: #ffffff;
   --border-color: #e5e5e5;
-  --button-bg: linear-gradient(90deg, #7f5af0, #5f2eea);
+  --form-bg: linear-gradient(0.25turn, #966e5a, 25%, #080808);
+  --button-bg: linear-gradient(90deg, #F5651F, #F1976E);
   --button-text: #ffffff;
 }
 
@@ -18,12 +19,13 @@
 :root {
   --bg-primary: #0f0f1a;
   --bg-secondary: #1a1a2e;
-  --text-primary: #ffffff;
+  --text-primary: #FDE9D9;
   --text-secondary: #b0b0c3;
-  --input-bg: #1e1e2f;
+  --input-bg: #4B362D;
   --border-color: #2a2a3d;
-  --button-bg: linear-gradient(90deg, #7f5af0, #9d4edd);
-  --button-text: #ffffff;
+  --form-bg: linear-gradient(0.25turn, #966e5a, 25%, #080808);
+  --button-bg: linear-gradient(90deg, #F5651F, #F1976E);
+  --button-text: #FDE9D9;
 }
 
 /*All fonts SRC*/
@@ -102,7 +104,79 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-primary);
+  background-image: url(../../assets/images/interface.png);
+  background-position: left right;
+  background-size: cover;
+}
+main .form-container {
+  width: 25%;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+main .form-container .details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--form-bg);
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  border-radius: 1.5rem;
+}
+main .form-container .details h1 {
+  color: var(--text-primary);
+}
+main .form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+main .form-container form input,
+main .form-container form button {
+  border: none;
+  outline: none;
+  padding-inline: 1.5rem;
+  padding-block: 1rem;
+  border-radius: 1rem;
+  border-color: var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+}
+main .form-container form ::-moz-placeholder {
+  color: var(--text-primary);
+}
+main .form-container form ::placeholder {
+  color: var(--text-primary);
+}
+main .form-container form button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: 1rem;
+  cursor: pointer;
+}
+main .form-container p {
+  padding-top: 1rem;
+}
+main .form-container p .toggleAuthForm {
+  color: var(--button-text);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../assets/images/interface.png);
+  background-position: left right;
+  background-size: cover;
 }
 main .form-container {
   height: -moz-fit-content;
@@ -111,22 +185,9 @@ main .form-container {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  position: relative;
-}
-main .form-container .image {
-  position: absolute;
-  width: 150%;
-}
-main .form-container .image img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
 }
 main .form-container .details {
-  width: 150%;
-  padding-top: 18rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;

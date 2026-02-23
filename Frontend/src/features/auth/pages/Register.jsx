@@ -12,27 +12,12 @@ const Register = () => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    axios
-      .post(
-        "http://localhost:3000/api/auth/register",
-        {
-          username,
-          email,
-          password,
-        },
-        { withCredentials: true },
-      )
-      .then((res) => {
-        console.log(res.data);
-      });
+    
   }
 
   return (
     <main>
       <div className="form-container">
-        <div className="image">
-          <img src={image2} alt="bg-themed" />
-        </div>
         <div className="details">
           <h1>
             <User />
