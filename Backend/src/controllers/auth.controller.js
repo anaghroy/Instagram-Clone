@@ -72,18 +72,20 @@ async function loginController(req, res) {
     const { username, email, password } = req.body;
 
     /**Checking process */
-    const user = await userModel.findOne({
-      $or: [
-        {
-          /**Condition-1 */
-          username: username,
-        },
-        {
-          /**Condition-2 */
-          email: email,
-        },
-      ],
-    });
+    const user = await userModel
+      .findOne({
+        $or: [
+          {
+            /**Condition-1 */
+            username: username,
+          },
+          {
+            /**Condition-2 */
+            email: email,
+          },
+        ],
+      })
+      .select("+password"); //Select password field explicitly since it's excluded in the schema by default
 
     if (!user) {
       return res.status(401).json({

@@ -101,9 +101,40 @@ async function likePostController(req, res) {
     });
   }
 }
+
+async function getFeedController(req, res) {
+  try {
+    const user = req.user;
+    const post = await Promise.all(
+      (await postModel.find().populate("user").lean())
+      .map(async (post) => {
+        {
+          /**
+           * typeof post => object
+           */
+          const isLiked = await likeModel.findOne({
+            user: user.username,
+            post: post._id,
+          });
+          post.isLiked = !!isLiked;
+          return post;
+        }
+      }),
+    );
+    res.status(200).json({
+      message: "Feed fetched successfully.",
+      posts: post,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: `Error: ${err.message}`,
+    });
+  }
+}
 module.exports = {
   createPostController,
   getPostController,
   getPostDetailsController,
   likePostController,
+  getFeedController,
 };
